@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Interaktif - Daffa Mawla Fayyaz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya dasar agar tampilan lebih rapi */
+        body {
+            background-color: yellow;
+            color: green;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 { color: red; }
+        section { margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        table, th, td { border: 1px solid green; border-collapse: collapse; padding: 10px; }
+        .js-demo { background: #111; padding: 15px; border-radius: 8px; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <img src="https://imgs.search.brave.com/PFAIEN1nUPVo0ptuVjYERABlK5O-JDEM07VhKrqKaiY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9iZXJp/dGF0YW5nZXJhbmcu/aWQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjUvMDQva2FuZy1k/ZWRpLW11bHlhZGku/anBn" width="300" alt="Foto Kang Dedi">
+    </header>
+
+    <main>
+        <article>
+            <aside>
+                <p><i>Ini adalah konten sidebar untuk informasi tambahan.</i></p>
+            </aside>
+            <h2>Ini Artikel</h2>
+            <p>Ini adalah konten artikel dengan berbagai informasi menarik.</p>
+            <h3>Subjudul</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+
+        <section>
+            <h3>Formulir Kontak</h3>
+            <form action="/submit" method="post">
+                <label>Nama:</label><br>
+                <input type="text" id="input_nama_form"><br><br>
+
+                <label>Nomor:</label><br>
+                <input type="number"><br><br>
+
+                <label>Tanggal:</label><br>
+                <input type="date"><br><br>
+
+                <label>Waktu:</label><br>
+                <input type="time"><br><br>
+
+                <label>Warna:</label><br>
+                <input type="color"><br><br>
+
+                <input type="submit" value="Kirim">
+            </form>
+        </section>
+
+        <section>
+            <h3>Data Penduduk</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Umur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jokowi</td>  
+                        <td>20</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="js-demo">
+            <h3>Demonstrasi JavaScript</h3>
+            
+            <h1 id="teks">Teks Asli</h1>
+            <button onclick="alert('Halo! Ini adalah Inline JavaScript')">Inline Alert</button>
+            
+            <hr>
+            
+            <label>Input Nama:</label>
+            <input type="text" id="nama_js">
+            <button id="btn_tampilkan">Tampilkan & Cek</button>
+            <p id="hasil"></p>
+            
+            <hr>
+            
+            <h1 id="judul_ubah">Teks Awal</h1>
+            <button id="tombolUbah">Ubah Teks & Warna</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Daffa Mawla Fayyaz</p>
+    </footer>
+
+    <script>
+        // 1. Mengubah teks saat halaman dimuat
+        document.getElementById("teks").innerHTML = "Teks ini diubah oleh JavaScript!";
+
+        // 2. Logika Cek Nama & Tampilkan
+        const btnTampilkan = document.querySelector("#btn_tampilkan");
+        btnTampilkan.addEventListener("click", function() {
+            const nama = document.querySelector("#nama_js").value;
+            const hasil = document.querySelector("#hasil");
+            
+            if (nama === "") {
+                alert("Nama tidak boleh kosong");
+                hasil.innerHTML = "";
+            } else {
+                alert("Berhasil!");
+                hasil.innerHTML = "Halo, " + nama + "!";
+                hasil.style.color = "yellow";
+            }
+        });
+
+        // 3. Ubah Teks dan Style
+        const judulUbah = document.querySelector("#judul_ubah");
+        const tombolUbah = document.querySelector("#tombolUbah");
+
+        tombolUbah.addEventListener("click", () => {
+            judulUbah.textContent = "Teks sudah berubah!";
+            judulUbah.style.color = "cyan";
+        });
+    </script>
+    <input type="text" id="nama">
+<button id="btn">Tampilkan</button>
+<p id="hasil"></p>
+
+<script>
+const btn = document.querySelector("#btn");
+
+btn.addEventListener("click", function() {
+    const nama = document.querySelector("#nama").value;
+    document.querySelector("#hasil").innerHTML = nama;
+});
+</script>
+<h1 id="judul">Teks Awal</h1>
+<button id="tombolUbah">Ubah Teks</button>
+
+<script>
+  // 1. Ambil elemen
+  const judul = document.querySelector("#judul");
+  const tombol = document.querySelector("#tombolUbah");
+
+  // 2. Tambahkan interaksi
+  tombol.addEventListener("click", () => {
+      judul.textContent = "Teks sudah berubah!";
+      judul.style.color = "blue";
+  });
+</script>
+
+    <script src="script.js"></script>
+
+</body>
